@@ -1,0 +1,62 @@
+/* style.css */
+
+body {
+  background-image: url("bgkwn.png"); /* Ganti "background.jpg" dengan URL gambar latar belakang Anda */
+  background-size: cover;
+  background-position: center;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column; /* Mengubah arah konten menjadi vertikal */
+}
+
+.container {
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 40px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  word-wrap: break-word; /* Menambahkan properti word-wrap */
+}
+
+input[type="text"],
+input[type="number"],
+input[type="submit"] {
+  width: calc(100% - 22px); /* Lebar input */
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid #ddd; /* Garis batas input */
+  border-radius: 5px; /* Border radius */
+  box-sizing: border-box;
+}
+
+input[type="submit"] {
+  background-color: #ff7f50; /* Warna tombol */
+  color: #fff; /* Warna teks tombol */
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Efek transisi */
+}
+
+input[type="submit"]:hover {
+  background-color: #ff6347; /* Warna tombol saat dihover */
+}
+
+.title {
+  text-align: center; /* Memastikan judul berada di tengah */
+  font-weight: bold; /* Membuat judul menjadi tebal (bold) */
+  color: #333; /* Warna teks judul */
+  margin-bottom: 20px;
+}
+
+.table-data td {
+  font-weight: bold; /* Membuat semua tulisan dalam tabel menjadi tebal (bold) */
+}
+
+.error {
+  color: #ff0000; /* Warna teks error */
+}

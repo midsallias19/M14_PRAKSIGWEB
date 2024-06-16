@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>WebGIS 2: Geoserver Layer</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="libs/leaflet/leaflet.css" />
+    <link rel="stylesheet" href="css/mymap.css" />
+    <script src="libs/leaflet/leaflet.js"></script>
+  </head>
+  <body>
+    <div id="mapdiv" style="height: 100%"></div>
+    <script>
+      var mymap = L.map("mapdiv").setView([-7.66, 110.399], 11);
+
+      var osm = L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+        subdomains: ["a", "b", "c"],
+      });
+
+      osm.addTo(mymap);
+
+      var yogya_desa = L.tileLayer.wms("http://localhost:8080/geoserver/wms", {
+        layers: "Sigweb:Batas_Desa",
+        format: "image/png",
+        transparent: true,
+      });
+      yogya_desa.addTo(mymap);
+
+      var yogya_jalan = L.tileLayer.wms("http://localhost:8080/geoserver/wms", {
+        layers: "Sigweb:Jaringan_jalan",
+        format: "image/png",
+        transparent: true,
+      });
+      yogya_jalan.addTo(mymap);
+
+      var yogya_fasum = L.tileLayer.wms("http://localhost:8080/geoserver/wms", {
+        layers: "Sigweb:Fasilitas_Umum",
+        format: "image/png",
+        transparent: true,
+      });
+      yogya_fasum.addTo(mymap);
+
+      var baseMaps = {
+        OpenStreetMap: osm,
+      };
+
+      var overlayMaps = {
+        "Yogya Desa": yogya_desa,
+        "Yogya Jalan": yogya_jalan,
+        "Yogya Fasilitas Umum": yogya_fasum,
+      };
+
+      L.control.layers(baseMaps, overlayMaps).addTo(mymap);
+    </script>
+  </body>
+</html>

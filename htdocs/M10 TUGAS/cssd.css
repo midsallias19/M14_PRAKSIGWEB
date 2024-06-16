@@ -1,0 +1,34 @@
+/* style.css */
+
+/* Tampilan judul */
+h3 {
+  color: #333; /* Warna teks */
+  text-align: center; /* Posisi teks */
+}
+
+/* Tampilan tabel */
+table {
+  width: 100%; /* Lebar tabel */
+  border-collapse: collapse; /* Gabungkan garis border */
+  margin: 20px auto; /* Membuat jarak antara tabel dan teks di sekitarnya */
+}
+
+/* Gaya baris header */
+th {
+  background-color: #f2f2f2; /* Warna latar belakang */
+  color: #333; /* Warna teks */
+  font-weight: bold; /* Tebalkan teks */
+  padding: 10px; /* Berikan ruang antara isi dan tepi */
+  text-align: left; /* Posisi teks */
+}
+
+/* Gaya sel */
+td {
+  padding: 10px; /* Berikan ruang antara isi dan tepi */
+  text-align: left; /* Posisi teks */
+}
+
+/* Gaya baris ganjil */
+tr:nth-child(odd) {
+  background-color: #f9f9f9; /* Warna latar belakang */
+}
